@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
             lowercase: true,
             trim: true,
         },
-        fullname: {
+        fullName: {
             type: String,
             required: true,
             trim: true,
@@ -32,12 +32,12 @@ const userSchema = new mongoose.Schema(
         coverImage: {
             type: String, //cloudnary service
         },
-        // watchHistory: [
-        //     {
-        //         type: Schema.Type.ObjectId,
-        //         ref : "Vedio"
-        //     },
-        // ],
+        watchHistory: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref : "Vedio"
+            },
+        ],
         password: {
             type: String,
             required: [true, "password must be required"],
