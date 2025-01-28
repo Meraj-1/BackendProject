@@ -179,7 +179,7 @@ const refreshAccesToken = asyncHandler(async (req, res) => {
    if (!user) {
      throw new ApiError(401, "Invalid Refresh Token");
     }
-   if(incomingRefreshToken !== user?.refreshToken) {
+   if(!incomingRefreshToken !== user?.refreshToken) {
      throw new ApiError(401, "Invalid Refresh Token");
    }
    const option = {
